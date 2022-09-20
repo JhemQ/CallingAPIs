@@ -12,6 +12,10 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    BlogListComponent,
+    BlogItemComponent
   ]
 })
 export class BlogModule { }

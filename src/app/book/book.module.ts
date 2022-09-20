@@ -12,6 +12,10 @@ import { BookItemComponent } from './components/book-item/book-item.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    BookListComponent,
+    BookItemComponent
   ]
 })
 export class BookModule { }
