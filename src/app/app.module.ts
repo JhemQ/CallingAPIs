@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { BookModule } from './book/book.module';
 import { BlogModule } from './blog/blog.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     UserModule,
