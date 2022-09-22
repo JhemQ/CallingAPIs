@@ -20,4 +20,5 @@ const routes: Routes = [];
     FormComponent
   ]
 })
+
 export class UserModule { }
