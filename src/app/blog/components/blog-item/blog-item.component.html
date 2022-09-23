@@ -1,1 +1,12 @@
-<p>blog-item works!</p>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Id:</strong> {{blog?.id}}</li>
+    <li class="list-group-item"><strong>Title: </strong> {{blog?.title}}</li>
+    <li class="list-group-item"><strong>Description: </strong> {{blog?.description}}</li>
+    <li class="list-group-item"><strong>Author: </strong> {{blog?.author}}</li>
+    <li class="list-group-item"><strong>Comments: </strong> {{blog?.comments}}</li>
+    <li class="list-group-item"><strong>Action: </strong> 
+        <button type="button" class="btn btn-primary" (click)="editBlog()">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deleteBlog()">Delete</button>
+    </li>
+</ul>
+<br>

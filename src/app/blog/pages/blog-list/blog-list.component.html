@@ -1,1 +1,3 @@
-<p>blog-list works!</p>
+<div *ngFor="let details of blogs; let i = index">
+    <app-blog-item [blog]="details" (blogEmitter)="blogAction($event)"></app-blog-item>
+</div>

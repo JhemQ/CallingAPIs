@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogInterface } from '../../models/blog-interface';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
-  constructor() { }
+  public blogs:BlogInterface[] = []
+  
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
+    this.blogs = this.blogService.getBlogs();
+  }
+
+  blogAction(blog: BlogInterface){
+    console.log(blog)
   }
 
 }

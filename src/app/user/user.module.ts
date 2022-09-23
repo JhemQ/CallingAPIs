@@ -4,8 +4,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FormComponent } from './components/form/form.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
-
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -13,7 +11,6 @@ const routes: Routes = [];
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
   ],
   exports: [
     ProfileComponent,
