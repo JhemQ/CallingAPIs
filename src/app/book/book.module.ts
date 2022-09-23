@@ -6,7 +6,6 @@ import { BookRoutingModule } from './book-routing.module';
 import { BookService } from './services/book.service';
 
 
-
 @NgModule({
   declarations: [
     BookListComponent,

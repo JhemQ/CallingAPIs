@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FormComponent } from './components/form/form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,12 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     CommonModule,
-  ],
-  exports: [
+    UserRoutingModule
+  ]/* ,
+   exports: [
     ProfileComponent,
     FormComponent
-  ]
+  ] */ 
 })
 
 export class UserModule { }
