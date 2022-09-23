@@ -17,4 +17,8 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.getBooks();
   }
 
+  bookAction(book: BookInterface){
+    console.log(book)
+  }
+
 }

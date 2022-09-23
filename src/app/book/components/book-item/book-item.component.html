@@ -1,1 +1,15 @@
-<p>blog-item I am a child!</p>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Id:</strong> {{book?.id}}</li>
+    <li class="list-group-item"><strong>Name: </strong> {{book?.name}}</li>
+    <li class="list-group-item"><strong>Authors: </strong> {{book?.authors}}</li>
+    <li class="list-group-item"><strong>ISBN: </strong> {{book?.isbn}}</li>
+    <li class="list-group-item"><strong>Action: </strong> 
+        <button type="button" class="btn btn-primary" (click)="editBook()">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deleteBook()">Delete</button>
+    </li>
+</ul>
+<br>
+       
+
+
+            
