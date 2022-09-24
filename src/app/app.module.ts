@@ -5,10 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookModule } from './book/book.module';
 import { BlogModule } from './blog/blog.module';
+import { CommandBarComponent } from './shared/components/command-bar/command-bar.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    CommandBarComponent,
 
   ],
   imports: [
@@ -16,7 +23,10 @@ import { BlogModule } from './blog/blog.module';
     BrowserModule,
     AppRoutingModule,
     BookModule,
-    BlogModule
+    BlogModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
