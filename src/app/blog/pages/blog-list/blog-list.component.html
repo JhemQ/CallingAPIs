@@ -1,5 +1,5 @@
 <h2>Blog List</h2>
-<app-command-bar></app-command-bar>
+<app-command-bar [redirectTo]="false"></app-command-bar>
 <div *ngFor="let details of blogs; let i = index">
     <app-blog-item [blog]="details" (blogEmitter)="blogAction($event)"></app-blog-item>
 </div>

@@ -5,7 +5,7 @@
     <li class="list-group-item"><strong>Author: </strong> {{blog?.author}}</li>
     <li class="list-group-item"><strong>Comments: </strong> {{blog?.comments}}</li>
     <li class="list-group-item"><strong>Action: </strong> 
-        <button type="button" class="btn btn-primary" (click)="editBlog()">Edit</button>
+        <a [routerLink]="['/blog/form']"><button type="button" class="btn btn-primary" (click)="editBlog()">Edit</button></a>
         <button type="button" class="btn btn-danger" (click)="deleteBlog()">Delete</button>
     </li>
 </ul>

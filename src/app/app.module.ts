@@ -7,6 +7,7 @@ import { BookModule } from './book/book.module';
 import { BlogModule } from './blog/blog.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     BookModule,
     BlogModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

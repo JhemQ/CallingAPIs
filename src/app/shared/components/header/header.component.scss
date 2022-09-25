@@ -1,8 +1,12 @@
 a:hover{
-    color: rgb(245, 247, 249);
+    //color: rgb(245, 247, 249);
+    background-color: opacify($color: white, $amount: 1);
 }
 
 .spacer {
     flex: 1 1 auto;
 }
 
+.nav-bar{
+    background-color: dodgerblue;
+}

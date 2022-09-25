@@ -5,6 +5,7 @@ import { CommandBarComponent } from './components/command-bar/command-bar.compon
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from '../app-routing.module';
+import { BookModule } from '../book/book.module';
 
 @NgModule({
   declarations: [

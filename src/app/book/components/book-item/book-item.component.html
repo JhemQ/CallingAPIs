@@ -4,7 +4,7 @@
     <li class="list-group-item"><strong>Authors: </strong> {{book?.authors}}</li>
     <li class="list-group-item"><strong>ISBN: </strong> {{book?.isbn}}</li>
     <li class="list-group-item"><strong>Action: </strong> 
-        <button type="button" class="btn btn-primary" (click)="editBook()">Edit</button>
+        <a [routerLink]="['/book/form']"><button type="button" class="btn btn-primary" (click)="editBook()">Edit</button></a>
         <button type="button" class="btn btn-danger" (click)="deleteBook()">Delete</button>
     </li>
 </ul>

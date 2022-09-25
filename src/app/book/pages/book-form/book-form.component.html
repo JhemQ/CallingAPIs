@@ -1,0 +1,20 @@
+<form [formGroup]="bookForm" (ngSubmit)="submit(bookForm)" style="max-width:500px; margin:auto">
+  <h2>Book Form</h2>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input formControlName="name" class="input-field" type="text" placeholder="Name" id="name">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input formArrayName="authors" class="input-field" type="text" placeholder="Authors" id="authors">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-book icon"></i>
+    <input formControlName="isbn" class="input-field" type="text" placeholder="Isbn" id="isbn">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

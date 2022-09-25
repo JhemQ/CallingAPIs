@@ -1,5 +1,5 @@
 <h2>Book List</h2>
-<app-command-bar></app-command-bar>
+<app-command-bar [redirectTo]="true"></app-command-bar>
 <div *ngFor="let details of books; let i = index">
     <app-book-item [book]="details" (bookEmitter)="bookAction($event)"></app-book-item>
 </div>

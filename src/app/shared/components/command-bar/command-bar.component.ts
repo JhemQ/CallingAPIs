@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-command-bar',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandBarComponent implements OnInit {
 
-  constructor() { }
+  @Input() redirectTo:boolean | undefined;
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }

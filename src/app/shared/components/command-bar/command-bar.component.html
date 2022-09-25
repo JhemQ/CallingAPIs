@@ -1,5 +1,10 @@
 <div class="command-label">Command-Bar</div>
 <div class="button-row">
-    <button id="addBtn" mat-button color="primary">Add</button>
+    <span *ngIf="redirectTo">
+        <a [routerLink]="['/book/form']" ><button id="addBtn" mat-button color="primary">Add</button></a>
+    </span>
+    <span *ngIf="!redirectTo">
+        <a [routerLink]="['/blog/form']" ><button id="addBtn" mat-button color="primary">Add</button></a>
+    </span>
     <button id="deleteBtn" mat-button color="warn">Delete All</button>
 </div>
