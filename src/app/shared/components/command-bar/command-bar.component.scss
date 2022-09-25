@@ -1,0 +1,26 @@
+.command-label {
+    display: table-cell;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+
+  .button-row {
+    display: table-cell;
+    width: 490px;
+    margin: 8px 8px 8px 0;
+    padding-top: 5px;
+
+  }
+
+  #addBtn{
+    background-color: rgb(25, 192, 89);
+    color: white;
+  }
+
+  #deleteBtn{
+    background-color: rgb(190, 37, 37);
+    color: white;
+    margin-left: 5px;
+  }

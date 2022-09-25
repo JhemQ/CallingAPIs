@@ -7,7 +7,8 @@ import { FormComponent } from './user/components/form/form.component';
 const routes: Routes = [
   {
     path: "",
-    component: BlogListComponent
+    redirectTo: "blog",
+    pathMatch: "full"
   },
   {
     path: "book",
