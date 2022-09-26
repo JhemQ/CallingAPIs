@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "29",
+      "name": "Edgar Jhem Chua Quiambao",
+      "authors": [],
+      "isbn": "safafa"
+    },
+    {
+      "id": 3,
+      "name": "Edgar Jhem Chua Quiambao",
+      "authors": [
+        "sfsfsaf",
+        "fsasafa",
+        "332256"
+      ],
+      "isbn": "efefw2543"
+    },
+    {
+      "id": 2,
+      "name": "ddada",
+      "authors": [
+        "3352",
+        "3431dfsddgs"
+      ],
+      "isbn": "gdsgsgsg"
+    },
+    {
+      "id": 5,
+      "name": "JEsica",
+      "authors": [
+        "Harry",
+        "Potter",
+        "Spider"
+      ],
+      "isbn": "34567357a"
+    },
+    {
+      "id": 34,
+      "name": "Edgar Jhem Chua Quiambao",
+      "authors": [
+        "Jesi",
+        "Tin"
+      ],
+      "isbn": "1234567890"
+    },
+    {
+      "id": 7,
+      "name": "Jesimiel",
+      "authors": [
+        "Neslea",
+        "Edgar",
+        "Lolita"
+      ],
+      "isbn": "123456"
+    },
+    {
+      "id": 11,
+      "name": "Edgar Jhem Chua Quiambao",
+      "authors": [
+        "Jesi",
+        "Tin",
+        "Faith",
+        "Ian"
+      ],
+      "isbn": "fjfaksfkha"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

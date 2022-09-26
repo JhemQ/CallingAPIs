@@ -21,11 +21,11 @@ export class BookItemComponent implements OnInit {
   }
 
   editBook(){
-    this.bookEmitter.emit(this.book?.id)
+    this.bookEmitter.emit(this.book)
   }
 
   deleteBook(){
-    this.bookEmitter.emit(this.book?.id)
+    this.bookEmitter.emit(this.book)
   }
 
 }

@@ -20,7 +20,9 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     SharedModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
+
   ],
   exports: [
     BookListComponent,
