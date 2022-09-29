@@ -64,6 +64,13 @@
       "email": "a",
       "password": "password123",
       "id": 1
+    },
+    {
+      "fullName": "Edgar Jhem Chua Quiambao",
+      "age": 22,
+      "email": "equimbao@77global.biz",
+      "password": "password123",
+      "id": 2
     }
   ],
   "profile": {
