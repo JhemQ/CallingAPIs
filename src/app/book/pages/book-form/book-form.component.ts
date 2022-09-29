@@ -65,8 +65,5 @@ export class BookFormComponent implements OnInit {
       alert("Something went wrong");
     })
   }
-  editBook(){
-
-  }
 
 }

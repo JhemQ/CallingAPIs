@@ -69,8 +69,5 @@ export class BlogFormComponent implements OnInit {
       alert("Something went wrong");
     })
   }
-  editBook(){
-
-  }
 
 }
