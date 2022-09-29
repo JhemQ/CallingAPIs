@@ -2,24 +2,59 @@
   "posts": [
     {
       "id": 1,
-      "name": "123",
-      "authors": "s",
-      "isbn": "1221234567s"
+      "name": "Book 1",
+      "authors": [
+        "Author1",
+        "Author2"
+      ],
+      "isbn": "1234567890"
     },
     {
       "id": 2,
-      "name": "s",
-      "authors": "s",
-      "isbn": "dada223341"
+      "name": "Book2",
+      "authors": [
+        "Author3"
+      ],
+      "isbn": "352624634X"
+    },
+    {
+      "id": 3,
+      "name": "Book3",
+      "authors": [
+        "Author4"
+      ],
+      "isbn": "123456789A"
     }
   ],
   "blog": [
     {
       "id": 1,
-      "title": "31",
-      "description": "3",
-      "author": "3",
-      "comments": ""
+      "title": "Blog1",
+      "description": "Description1",
+      "author": "Author1",
+      "comments": [
+        "Comment1"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Blog2",
+      "description": "Description 2",
+      "author": "Author 2",
+      "comments": [
+        "Comment2",
+        "Comment3",
+        "Comment4"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Blog3",
+      "description": "Description3",
+      "author": "Author3",
+      "comments": [
+        "Comment5"
+      ]
     }
   ],
   "comments": [],

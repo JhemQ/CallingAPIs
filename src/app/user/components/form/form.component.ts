@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -12,10 +12,10 @@ export class FormComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { 
     this.userForm = this.fb.group({
-      email: '',
-      name: '',
-      bio: '',
-      active: ''
+      email: ['', [Validators.email, Validators.required]],
+      name: ['', Validators.required],
+      bio: ['', Validators.required],
+      active: ['', Validators.required]
     });
   }
   
@@ -28,6 +28,21 @@ export class FormComponent implements OnInit {
     console.log('name', form.value.name);
     console.log('bio', form.value.bio);
     console.log('active', form.value.active);
+    alert("No implementation yet");
+    form.reset();
+  }
+
+  get email(){
+    return this.userForm.get('email');
+  }
+  get name(){
+    return this.userForm.get('name');
+  }
+  get bio(){
+    return this.userForm.get('bio');
+  }
+  get active(){
+    return this.userForm.get('active');
   }
 
 }
