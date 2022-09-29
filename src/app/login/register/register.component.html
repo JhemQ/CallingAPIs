@@ -7,7 +7,7 @@
                     <h6>Fill the form below to register</h6>
                 </div>
                 <form>
-                    <form [formGroup]="registerForm">
+                    <form [formGroup]="registerForm" (ngSubmit)="submit()">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input formControlName="fullName" type="text" class="form-control" id="name" placeholder="Enter full name">

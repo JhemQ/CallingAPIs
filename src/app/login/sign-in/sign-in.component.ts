@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -9,9 +11,36 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  loginForm : FormGroup
+
+  constructor(private router:Router, private fb:FormBuilder,
+    private http:HttpClient) { 
+    this.loginForm = this.fb.group({
+      email:[''],
+      password:['']
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.http.get<any>("http://localhost:3000/registerUser")
+    .subscribe(res=>{
+      const user = res.find((cred:any)=>{
+        return cred.email === this.loginForm.value.email &&
+        cred.password === this.loginForm.value.password
+      });
+      if(user){
+        alert("Login Success");
+        this.loginForm.reset();
+        this.router.navigate(['blog'])
+      }else{
+        alert("User not found");
+      }
+    }, err=>{
+      alert("Something went wrong")
+    })
   }
 
   redirectToReg(){

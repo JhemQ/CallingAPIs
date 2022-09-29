@@ -57,7 +57,15 @@
       ]
     }
   ],
-  "registerUser": [],
+  "registerUser": [
+    {
+      "fullName": "Edgar Jhem Chua Quiambao",
+      "age": 22,
+      "email": "a",
+      "password": "password123",
+      "id": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
