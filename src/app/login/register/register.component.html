@@ -6,7 +6,8 @@
                     <h1>Registration</h1>
                     <h6>Fill the form below to register</h6>
                 </div>
-                    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+                <form>
+                    <form [formGroup]="registerForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input formControlName="fullName" type="text" class="form-control" id="name" placeholder="Enter full name">
@@ -32,6 +33,7 @@
                             <button id="reg" class="btn btn-primary" (click)="redirectToLogin()">Login</button>
                         </div>
                     </form>
+                </form>
             </div>
         </div>
     </div>
