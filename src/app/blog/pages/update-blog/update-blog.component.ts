@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { BlogModel } from '../blog-form/BlogModel';
@@ -19,9 +19,9 @@ export class UpdateBlogComponent implements OnInit {
   constructor(private fb:FormBuilder, private api : BlogService, 
     private route:ActivatedRoute, private router:Router) { 
     this.blogForm = this.fb.group({
-      title: '',
-      description: '',
-      author: '',
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      author: ['', Validators.required],
       comments: ''
     });
     this.comments = this.blogForm.get('comments') as FormArray
@@ -35,6 +35,18 @@ export class UpdateBlogComponent implements OnInit {
     this.blogForm.controls['description'].setValue(this.blog.description)
     this.blogForm.controls['author'].setValue(this.blog.author)
     this.blogForm.controls['comments'].setValue(this.blog.comments)
+  }
+
+  get title(){
+    return this.blogForm.get('title');
+  }
+
+  get description(){
+    return this.blogForm.get('description');
+  }
+
+  get author(){
+    return this.blogForm.get('author');
   }
 
   updateBlogDetails(){

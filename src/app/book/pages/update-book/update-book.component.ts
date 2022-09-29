@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { BookModel } from '../book-form/BookModel';
@@ -20,9 +20,9 @@ export class UpdateBookComponent implements OnInit {
   constructor(private fb:FormBuilder, private api : BookService, 
     private route:ActivatedRoute, private router:Router) { 
     this.bookForm = this.fb.group({
-      name: '',
-      authors: '',
-      isbn: ''
+      name: ['', Validators.required],
+      authors: ['', Validators.required],
+      isbn: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.required]]
     });
     this.writters = this.bookForm.get('authors') as FormArray
   
@@ -34,6 +34,18 @@ export class UpdateBookComponent implements OnInit {
     this.bookForm.controls['name'].setValue(this.book.name)
     this.bookForm.controls['authors'].setValue(this.book.authors)
     this.bookForm.controls['isbn'].setValue(this.book.isbn)
+  }
+
+  get name(){
+    return this.bookForm.get('name');
+  }
+
+  get isbn(){
+    return this.bookForm.get('isbn');
+  }
+
+  get authors(){
+    return this.bookForm.get('authors');
   }
 
   updateBookDetails(){

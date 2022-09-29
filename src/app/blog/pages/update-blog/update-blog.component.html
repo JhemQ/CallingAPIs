@@ -5,21 +5,24 @@
         <i class="fa fa-bookmark icon"></i>
       <input formControlName="title" class="input-field" type="text" placeholder="Title" id="title">
     </div>
+    <div *ngIf="title && title.invalid && title.touched" class="alert alert-danger">Title is required</div>
     
     <div class="input-container">
         <i class="fa fa-file-text-o icon"></i>
         <input formControlName="description" class="input-field" type="text" placeholder="Description" id="description">
-      </div>
+    </div>
+    <div *ngIf="description && description.invalid && description.touched" class="alert alert-danger">Description is required</div>
     
     <div class="input-container">
         <i class="fa fa-user icon"></i>
       <input formControlName="author" class="input-field" type="text" placeholder="Author" id="author">
     </div>
+    <div *ngIf="author && author.invalid && author.touched" class="alert alert-danger">Author is required</div>
 
     <div class="input-container">
         <i class="fa fa-comments-o icon"></i>
         <input formControlName="comments" class="input-field" type="text" placeholder="Comments" id="comments">
     </div>
-  
-    <button id="submitBtn" type="submit" class="btn btn-primary" (click)="updateBlogDetails()">Update</button>
+
+    <button [disabled]="blogForm.invalid" id="submitBtn" type="submit" class="btn btn-primary" (click)="updateBlogDetails()">Update</button>
   </form>

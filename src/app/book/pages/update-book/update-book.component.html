@@ -5,16 +5,19 @@
       <i class="fa fa-user icon"></i>
       <input formControlName="name" class="input-field" type="text" placeholder="Name" id="name">
     </div>
+    <div *ngIf="name && name.invalid && name.touched" class="alert alert-danger">Name is required</div>
     
     <div class="input-container">
         <i class="fa fa-users icon"></i>
         <input formControlName="authors" class="input-field" type="text" placeholder="Authors" id="authors">
-      </div>
+    </div>
+    <div *ngIf="authors && authors.invalid && authors.touched" class="alert alert-danger">Author is required</div>
     
     <div class="input-container">
       <i class="fa fa-barcode icon"></i>
       <input formControlName="isbn" class="input-field" type="text" placeholder="Isbn" id="isbn">
     </div>
+    <div *ngIf="isbn && isbn.invalid && isbn.touched" class="alert alert-danger">Isbn is required and must be 10 characters</div>
   
-    <button id="submitBtn" type="submit" class="btn btn-primary" (click)="updateBookDetails()">Update</button>
+    <button [disabled]="bookForm.invalid" id="submitBtn" type="submit" class="btn btn-primary" (click)="updateBookDetails()">Update</button>
   </form>

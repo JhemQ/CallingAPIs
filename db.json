@@ -1,6 +1,27 @@
 {
-  "posts": [],
-  "blog": [],
+  "posts": [
+    {
+      "id": 1,
+      "name": "123",
+      "authors": "s",
+      "isbn": "1221234567s"
+    },
+    {
+      "id": 2,
+      "name": "s",
+      "authors": "s",
+      "isbn": "dada223341"
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "31",
+      "description": "3",
+      "author": "3",
+      "comments": ""
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"

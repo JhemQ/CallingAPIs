@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { BlogModel } from './BlogModel';
@@ -21,9 +21,9 @@ export class BlogFormComponent implements OnInit {
     private route:ActivatedRoute, private router:Router) { 
     this.blogForm = this.fb.group({
       id: '',
-      title: '',
-      description: '',
-      author: '',
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      author: ['', Validators.required],
       comments: fb.array([])
     });
     this.comments = this.blogForm.get('comments') as FormArray
@@ -32,6 +32,18 @@ export class BlogFormComponent implements OnInit {
   
   ngOnInit(): void {
     this.comments.push(new FormControl())
+  }
+
+  get title(){
+    return this.blogForm.get('title');
+  }
+
+  get description(){
+    return this.blogForm.get('description');
+  }
+
+  get author(){
+    return this.blogForm.get('author');
   }
 
   addComment(){
