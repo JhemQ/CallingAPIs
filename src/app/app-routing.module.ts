@@ -6,6 +6,8 @@ import { UpdateBlogComponent } from './blog/pages/update-blog/update-blog.compon
 import { BookFormComponent } from './book/pages/book-form/book-form.component';
 import { BookListComponent } from './book/pages/book-list/book-list.component';
 import { UpdateBookComponent } from './book/pages/update-book/update-book.component';
+import { RegisterComponent } from './login/register/register.component';
+import { SignInComponent } from './login/sign-in/sign-in.component';
 import { FormComponent } from './user/components/form/form.component';
 
 const routes: Routes = [
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path: "blog/update",
     component: UpdateBlogComponent
+  },
+  {
+    path: "login",
+    component: SignInComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   }
 ];
 

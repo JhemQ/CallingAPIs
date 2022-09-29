@@ -1,0 +1,32 @@
+.card {
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: dodgerblue;
+    background: linear-gradient(90deg, dodgerblue, rgb(64, 64, 198) 100%);
+}
+
+.card h1, h6{
+    color: white;
+}
+
+#loginBtn{
+    background-color: azure;
+    color: dodgerblue
+}
+
+label {
+    color: white;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
+
+.register {
+    margin-top: 10px;
+}

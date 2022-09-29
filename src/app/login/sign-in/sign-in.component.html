@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>Enter your email and password</h6>
+                </div>
+                <form>
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <button id="loginBtn" type="submit" class="btn btn-primary">Login</button>
+
+                        <div class="register">
+                            <label>New user? click to sign up</label><br>
+                            <button id="reg" class="btn btn-primary" (click)="redirectToReg()">Register</button>
+                        </div>
+                      </form>
+                      
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
