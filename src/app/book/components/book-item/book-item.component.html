@@ -1,13 +1,11 @@
+<div class="container">
 <ul class="list-group">
     <li class="list-group-item"><strong>Id:</strong> {{book?.id}}</li>
     <li class="list-group-item"><strong>Name: </strong> {{book?.name}}</li>
     <li class="list-group-item"><strong>Authors: </strong> {{book?.authors}}</li>
     <li class="list-group-item"><strong>ISBN: </strong> {{book?.isbn}}</li>
-    <li class="list-group-item"><strong>Action: </strong> 
-        <a [routerLink]="['/book/form']"><button type="button" id="btn" class="btn btn-primary" (click)="editBook()">Edit</button></a>
-        <button type="button" id="btn2" class="btn btn-danger" (click)="deleteBook()">Delete</button>
-    </li>
 </ul>
+</div>
 <br>
        
 

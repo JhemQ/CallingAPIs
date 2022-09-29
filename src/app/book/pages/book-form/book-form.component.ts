@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
-import { BookModel } from './bookModel';
+import { BookModel } from './BookModel';
 
 @Component({
   selector: 'app-book-form',
@@ -10,9 +10,10 @@ import { BookModel } from './bookModel';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-
+  
   bookForm: FormGroup;
   writters: FormArray
+  book:any
 
   bookObject : BookModel = new BookModel()
 
@@ -25,10 +26,11 @@ export class BookFormComponent implements OnInit {
       isbn: ''
     });
     this.writters = this.bookForm.get('authors') as FormArray
+  
   }
   
   ngOnInit(): void {
-
+    this.writters.push(new FormControl())
   }
 
   addAuthor(){
@@ -47,7 +49,7 @@ export class BookFormComponent implements OnInit {
   }
 
   postBookDetails(){
-    this.bookObject.id = this.bookForm.value.id;
+    //this.bookObject.id = this.bookForm.value.id;
     this.bookObject.name = this.bookForm.value.name;
     this.bookObject.authors = this.bookForm.value.authors;
     this.bookObject.isbn = this.bookForm.value.isbn;
@@ -62,6 +64,9 @@ export class BookFormComponent implements OnInit {
     err=>{
       alert("Something went wrong");
     })
+  }
+  editBook(){
+
   }
 
 }

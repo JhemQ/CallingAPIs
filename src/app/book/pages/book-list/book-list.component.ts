@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ApiService } from 'src/app/shared/api.service';
-import { BookInterface } from '../../models/book-interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 
 @Component({
@@ -10,30 +9,41 @@ import { BookService } from '../../services/book.service';
 })
 export class BookListComponent implements OnInit {
 
-  public books:BookInterface[] = []
-  @Output() bookEmitter = new EventEmitter();
   allBooks: any
 
-  constructor(private bookService: BookService, private api : BookService) { }
+  constructor(private api : BookService, private router: Router,
+     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.books = this.bookService.getBooks();
     this.getAllBooks();
   }
 
-  bookAction(book: BookInterface){
-    console.log(book)
-    console.log(this.bookEmitter.emit(book))
+  editBook(row : any){
+    this.router.navigate(['/book/update',{id:row.id, name:row.name, authors:row.authors, isbn:row.isbn}]);
+    
   }
 
-  detailsEmitter(){
-    this.bookEmitter.emit()
+  deleteBook(id: any){
+    this.api.deleteBook(id).subscribe(res=>{
+      alert("Book has been deleted");
+      this.getAllBooks()
+    })
   }
 
   getAllBooks(){
     this.api.getBook().subscribe(res=>{
       this.allBooks = res
     })
+  }
+
+  deleteAll(id:any){
+    this.api.deleteBook(id).subscribe(res=>{
+      
+    });
+    setTimeout(function(){
+      window.location.reload();
+    }, 1000);
+    this.getAllBooks();
   }
 
 }

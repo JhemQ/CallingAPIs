@@ -5,17 +5,21 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { BlogFormComponent } from './pages/blog-form/blog-form.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateBlogComponent } from './pages/update-blog/update-blog.component';
 
 @NgModule({
   declarations: [
     BlogListComponent,
     BlogItemComponent,
-    BlogFormComponent
+    BlogFormComponent,
+    UpdateBlogComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     BlogListComponent,

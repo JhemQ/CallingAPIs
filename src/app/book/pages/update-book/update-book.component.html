@@ -1,0 +1,20 @@
+<form [formGroup]="bookForm" style="max-width:500px; margin:auto">
+    <h2>Update Book</h2>
+  
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input formControlName="name" class="input-field" type="text" placeholder="Name" id="name">
+    </div>
+    
+    <div class="input-container">
+        <i class="fa fa-users icon"></i>
+        <input formControlName="authors" class="input-field" type="text" placeholder="Authors" id="authors">
+      </div>
+    
+    <div class="input-container">
+      <i class="fa fa-barcode icon"></i>
+      <input formControlName="isbn" class="input-field" type="text" placeholder="Isbn" id="isbn">
+    </div>
+  
+    <button id="submitBtn" type="submit" class="btn btn-primary" (click)="updateBookDetails()">Update</button>
+  </form>

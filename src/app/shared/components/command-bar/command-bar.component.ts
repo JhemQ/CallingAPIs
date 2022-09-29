@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,10 +9,27 @@ import { Router } from '@angular/router';
 export class CommandBarComponent implements OnInit {
 
   @Input() redirectTo:boolean | undefined;
-
+  @Input() show:boolean | undefined
+  @Input() books:any | undefined
+  @Input() blogs:any | undefined
+  @Output() idEmitterBook = new EventEmitter()
+  @Output() idEmitterBlog = new EventEmitter()
+  
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  deleteAllBooks(book: any){
+    for(let item of book){
+      this.idEmitterBook.emit(item.id)
+    }
+  }
+
+  deleteAllBlogs(blog: any){
+    for(let item2 of blog){
+      this.idEmitterBlog.emit(item2.id)
+    }
   }
 
 }

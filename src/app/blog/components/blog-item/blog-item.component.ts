@@ -9,20 +9,11 @@ import { BlogInterface } from '../../models/blog-interface';
 export class BlogItemComponent implements OnInit {
   
   @Input() blog:BlogInterface | undefined;
-  @Output() blogEmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  editBlog(){
-    this.blogEmitter.emit(this.blog?.id)
-  }
-
-  deleteBlog(){
-    this.blogEmitter.emit(this.blog?.id)
   }
 
 }

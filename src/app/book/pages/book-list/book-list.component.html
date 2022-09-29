@@ -1,5 +1,11 @@
-<h2>Book List</h2>
-<app-command-bar [redirectTo]="true"></app-command-bar>
-<div *ngFor="let details of allBooks; let i = index">
-    <app-book-item [book]="details" (bookEmitter)="bookAction($event)"></app-book-item>
+<h2 id="title">Book List</h2>
+<app-command-bar [redirectTo]="true" [show]="true" [books]="allBooks" (idEmitterBook)="deleteAll($event)"></app-command-bar>
+<div class="background">
+<div class="container" *ngFor="let details of allBooks; let i = index">
+    <app-book-item [book]="details"></app-book-item>
+    <strong id="action">Action: </strong>
+    <button type="button" id="btn" class="btn btn-primary" (click)="editBook(details)"><i class="fa fa-pencil-square-o"></i> Edit</button>
+    <button type="button" id="btn2" class="btn btn-danger" (click)="deleteBook(details.id)"><i class="fa fa-trash"></i> Delete</button>
 </div>
+</div>
+

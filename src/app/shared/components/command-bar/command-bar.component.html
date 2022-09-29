@@ -1,10 +1,14 @@
-<div class="command-label">Command-Bar</div>
 <div class="button-row">
     <span *ngIf="redirectTo">
-        <a [routerLink]="['/book/form']" ><button id="addBtn" mat-button color="primary">Add</button></a>
+        <a [routerLink]="['/book/form']" ><button id="addBtn" mat-button color="primary"><i class="fa fa-plus icon"></i> Add</button></a>
     </span>
     <span *ngIf="!redirectTo">
-        <a [routerLink]="['/blog/form']" ><button id="addBtn" mat-button color="primary">Add</button></a>
+        <a [routerLink]="['/blog/form']" ><button id="addBtn" mat-button color="primary"><i class="fa fa-plus icon"></i> Add</button></a>
     </span>
-    <button id="deleteBtn" mat-button color="warn">Delete All</button>
+    <span *ngIf="show">
+        <button id="deleteBtn" mat-button color="warn" (click)="deleteAllBooks(books)"><i class="fa fa-trash icon"></i> Delete All</button>
+    </span>
+    <span *ngIf="!show">
+        <button id="deleteBtn" mat-button color="warn" (click)="deleteAllBlogs(blogs)"><i class="fa fa-trash icon"></i> Delete All</button>
+    </span>
 </div>

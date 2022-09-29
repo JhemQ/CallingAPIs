@@ -49,12 +49,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
   margin-bottom: 10px;
 }
 
-#submitBtn, #authorBtn{
+#submitBtn {
   background-color: dodgerblue;
 }
 
 #delBtn {
   width: 20%;
+}
+
+#authorBtn{
+  width: 20%;
+  background-color: rgb(25, 192, 89);
 }
 
 

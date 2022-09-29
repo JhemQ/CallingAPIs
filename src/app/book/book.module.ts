@@ -7,21 +7,21 @@ import { SharedModule } from '../shared/shared.module';
 import { BookFormComponent } from './pages/book-form/book-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
-
-
+import { UpdateBookComponent } from './pages/update-book/update-book.component';
 
 @NgModule({
   declarations: [
     BookListComponent,
     BookItemComponent,
-    BookFormComponent
+    BookFormComponent,
+    UpdateBookComponent
+   
   ],
   imports: [
     CommonModule,
     SharedModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    SharedModule
+    AppRoutingModule
 
   ],
   exports: [

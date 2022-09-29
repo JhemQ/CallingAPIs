@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BookInterface } from '../../models/book-interface';
-import { BookService } from '../../services/book.service';
+
 
 @Component({
   selector: 'app-book-item',
@@ -9,23 +9,12 @@ import { BookService } from '../../services/book.service';
 })
 export class BookItemComponent implements OnInit {
 
-  //public books:BookInterface[] = []
-
   @Input() book:BookInterface | undefined;
-  @Output() bookEmitter = new EventEmitter();
 
-  constructor(private bookService: BookService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    //this.books = this.bookService.getBooks();
-  }
-
-  editBook(){
-    this.bookEmitter.emit(this.book)
-  }
-
-  deleteBook(){
-    this.bookEmitter.emit(this.book)
+    
   }
 
 }

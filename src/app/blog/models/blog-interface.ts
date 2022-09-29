@@ -1,5 +1,5 @@
 export interface BlogInterface {
-    id: number
+    id?: number
     title: string
     description: string
     author: string

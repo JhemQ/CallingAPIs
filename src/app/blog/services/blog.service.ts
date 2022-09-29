@@ -1,37 +1,39 @@
 import { Injectable } from '@angular/core';
-import { BlogInterface } from '../models/blog-interface';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  blogs: BlogInterface[] = [
-    {
-      id: 1,
-      title: "Tier One",
-      description: "Gaming",
-      author: "Alodia",
-      comments: ["Comment 1", "Comment 2", "Comment 3"]
-    },
-    {
-      id: 2,
-      title: "Crunchyroll",
-      description: "Anime",
-      author: "Unknown",
-      comments: ["Comment 4", "Comment 5"]
-    },
-    {
-      id: 3,
-      title: "Dramacool",
-      description: "Kdrama",
-      author: "Koreans",
-      comments: ["Comment 6", "Comment 7", "Comment 8", "Comment 9"]
-    }
-  ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getBlogs(){
-    return this.blogs
+  postBlog(data : any){
+    return this.http.post<any>("http://localhost:3000/blog", data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  getBlog(){
+    return this.http.get<any>("http://localhost:3000/blog")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  updateBlog(data : any, id: number){
+    return this.http.put<any>("http://localhost:3000/blog/"+id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  deleteBlog(id: number){
+    return this.http.delete<any>("http://localhost:3000/blog/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
   }
 }

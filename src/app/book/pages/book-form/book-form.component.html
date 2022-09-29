@@ -1,10 +1,10 @@
 <form [formGroup]="bookForm" (ngSubmit)="submit(bookForm)" style="max-width:500px; margin:auto">
   <h2>Book Form</h2>
 
-  <div class="input-container">
+  <!-- <div class="input-container">
     <i class="fa fa-key icon"></i>
     <input formControlName="id" class="input-field" type="number" placeholder="Id" id="id">
-  </div>
+  </div> -->
 
   <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -16,10 +16,9 @@
     <div class="input-container" *ngFor="let _ of writters.controls; index as i">
       <i class="fa fa-users icon"></i>
       <input [formControlName]="i" class="input-field" type="text" placeholder="Authors" id="authors">
-      <button id="delBtn" type="button" class="btn btn-danger" (click)="deleteAuthor(i)">Delete</button>
+      <button id="authorBtn" class="btn btn-success" (click)="addAuthor()"><i class="fa fa-plus"></i></button>
+      <button id="delBtn" type="button" class="btn btn-danger" (click)="deleteAuthor(i)"><i class="fa fa-trash"></i></button>
     </div>
-
-    <button id="authorBtn" class="btn btn-info" (click)="addAuthor()">Add Author</button>
   </ng-container>
   </div>
   <div class="input-container">

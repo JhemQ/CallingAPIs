@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogInterface } from '../../models/blog-interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 
 @Component({
@@ -9,16 +9,41 @@ import { BlogService } from '../../services/blog.service';
 })
 export class BlogListComponent implements OnInit {
 
-  public blogs:BlogInterface[] = []
-  
-  constructor(private blogService: BlogService) { }
+  allBlogs: any
+
+  constructor(private api : BlogService, private router: Router,
+     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.blogs = this.blogService.getBlogs();
+    this.getAllBlogs();
   }
 
-  blogAction(blog: BlogInterface){
-    console.log(blog)
+  editBlog(row : any){
+    this.router.navigate(['/blog/update',{id:row.id, title:row.title, description:row.description, author:row.author, comments:row.comments}]);
+    
+  }
+
+  deleteBlog(id: any){
+    this.api.deleteBlog(id).subscribe(res=>{
+      alert("Blog has been deleted");
+      this.getAllBlogs()
+    })
+  }
+
+  getAllBlogs(){
+    this.api.getBlog().subscribe(res=>{
+      this.allBlogs = res
+    })
+  }
+
+  deleteAllBlogs(id:any){
+    this.api.deleteBlog(id).subscribe(res=>{
+
+    });
+    setTimeout(function(){
+      window.location.reload();
+    }, 1000);
+    this.getAllBlogs();
   }
 
 }

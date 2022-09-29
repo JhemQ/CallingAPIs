@@ -1,1 +1,31 @@
-<p>blog-form works!</p>
+<form [formGroup]="blogForm" (ngSubmit)="submit(blogForm)" style="max-width:500px; margin:auto">
+    <h2>Blog Form</h2>
+  
+    <div class="input-container">
+        <i class="fa fa-bookmark icon"></i>
+      <input formControlName="title" class="input-field" type="text" placeholder="Title" id="title">
+    </div>
+  
+    <div class="input-container">
+        <i class="fa fa-file-text-o icon"></i>
+      <input formControlName="description" class="input-field" type="text" placeholder="Description" id="description">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input formControlName="author" class="input-field" type="text" placeholder="Author" id="author">
+    </div>
+    
+    <div class="space">
+    <ng-container formArrayName="comments">
+      <div class="input-container" *ngFor="let _ of comments.controls; index as i">
+        <i class="fa fa-comments-o icon"></i>
+        <input [formControlName]="i" class="input-field" type="text" placeholder="Comments" id="authors">
+        <button id="authorBtn" class="btn btn-success" (click)="addComment()"><i class="fa fa-plus"></i></button>
+        <button id="delBtn" type="button" class="btn btn-danger" (click)="deleteComment(i)"><i class="fa fa-trash"></i></button>
+      </div>
+    </ng-container>
+    </div>
+
+    <button id="submitBtn" type="submit" class="btn btn-primary" (click)="postBlogDetails()">Submit</button>
+  </form>

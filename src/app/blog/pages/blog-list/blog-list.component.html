@@ -1,5 +1,11 @@
-<h2>Blog List</h2>
-<app-command-bar [redirectTo]="false"></app-command-bar>
-<div *ngFor="let details of blogs; let i = index">
-    <app-blog-item [blog]="details" (blogEmitter)="blogAction($event)"></app-blog-item>
+<h2 id="title">Blog List</h2>
+<app-command-bar [redirectTo]="false" [show]="false" [blogs]="allBlogs" (idEmitterBlog)="deleteAllBlogs($event)"></app-command-bar>
+<div class="background">
+<div class="container" *ngFor="let details of allBlogs; let i = index">
+    <app-blog-item [blog]="details"></app-blog-item>
+    <strong id="action">Action: </strong>
+    <button type="button" id="btn" class="btn btn-primary" (click)="editBlog(details)"><i class="fa fa-pencil-square-o"></i> Edit</button>
+    <button type="button" id="btn2" class="btn btn-danger" (click)="deleteBlog(details.id)"><i class="fa fa-trash"></i> Delete</button>
 </div>
+</div>
+
