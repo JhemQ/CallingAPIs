@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { SignInComponent } from 'src/app/login/sign-in/sign-in.component';
 import { AuthService } from '../services/auth.service';
 
@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   canActivate(){
     var accessToken = localStorage.getItem('token');
@@ -17,6 +17,8 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     else{
+      alert("Please login to gain access")
+      this.router.navigate(['login'])
       return false;
     }
   }
