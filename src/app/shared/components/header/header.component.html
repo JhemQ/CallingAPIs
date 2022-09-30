@@ -4,9 +4,10 @@
     </span>
 
 <div class="spacer" ></div>
-    <a mat-button routerLink="book">Book</a>
-    <a mat-button routerLink="blog">Blog</a>
-    <a mat-button routerLink="profile">Profile</a>
+    <a id="bookBtn" mat-button routerLink="book">Book</a>
+    <a id="blogBtn" mat-button routerLink="blog">Blog</a>
+    <a id="profileBtn" mat-button routerLink="profile">Profile</a>
+    <a id="logoutBtn" mat-button routerLink="login" (click)="destroyToken()">Logout</a>
 
 </mat-toolbar>
 

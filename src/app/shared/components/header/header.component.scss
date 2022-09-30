@@ -1,4 +1,4 @@
-a:hover{
+#bookBtn:hover, #blogBtn:hover, #profileBtn:hover{
     //color: rgb(245, 247, 249);
     background-color: opacify($color: white, $amount: 1);
 }
@@ -9,6 +9,17 @@ a:hover{
 
 .nav-bar{
     background-color: dodgerblue;
+}
+
+#logoutBtn {
+    margin-left: 5px;
+    background-color: rgb(220, 29, 29);
+}
+
+#logoutBtn:hover {
+    color: red;
+    background-color: white;
+    
 }
 
 

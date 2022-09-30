@@ -71,6 +71,13 @@
       "email": "equimbao@77global.biz",
       "password": "password123",
       "id": 2
+    },
+    {
+      "fullName": "Juan Miguel",
+      "age": 29,
+      "email": "juan@miguel.com",
+      "password": "pass123",
+      "id": 3
     }
   ],
   "profile": {

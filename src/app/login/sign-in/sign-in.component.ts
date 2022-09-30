@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -33,6 +33,7 @@ export class SignInComponent implements OnInit {
       });
       if(user){
         alert("Login Success");
+        localStorage.setItem('token', "thisIsAccessToken123456789")
         this.loginForm.reset();
         this.router.navigate(['blog'])
       }else{
@@ -41,6 +42,7 @@ export class SignInComponent implements OnInit {
     }, err=>{
       alert("Something went wrong")
     })
+
   }
 
   redirectToReg(){

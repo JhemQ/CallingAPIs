@@ -34,19 +34,23 @@ const routes: Routes = [
   },
   {
     path: "book/form",
-    component: BookFormComponent
+    component: BookFormComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "book/update",
-    component: UpdateBookComponent
+    component: UpdateBookComponent,
+    canActivate: [AuthGuard]
   }, 
   {
     path: "blog/form",
-    component: BlogFormComponent
+    component: BlogFormComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "blog/update",
-    component: UpdateBlogComponent
+    component: UpdateBlogComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "login",
@@ -55,6 +59,12 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  }
+  ,
+  {
+    path: "**",
+    redirectTo: "login",
+    pathMatch: "full"
   }
 ];
 

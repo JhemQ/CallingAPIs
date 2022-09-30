@@ -12,7 +12,13 @@ export class AuthGuard implements CanActivate {
   constructor() {}
 
   canActivate(){
-    return true;
+    var accessToken = localStorage.getItem('token');
+    if(accessToken != null){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
   
 }
